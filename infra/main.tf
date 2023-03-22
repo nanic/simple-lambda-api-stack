@@ -40,6 +40,7 @@ resource "aws_lambda_function" "sample_lambda" {
   source_code_hash = data.archive_file.lambda.output_base64sha256
 
   runtime = "nodejs16.x"
+  timeout = var.lambda_timeout
 
   environment {
     variables = {
